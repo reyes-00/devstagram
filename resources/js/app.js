@@ -39,3 +39,6 @@ dropzone.on('removedfile', function () {
   document.querySelector('[name="imagen"]').value = "";
   // console.log("Archivo ELiminado");
 })
+
+
+console.log("object");

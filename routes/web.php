@@ -8,12 +8,15 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\BuscadorController;
 use App\Http\Controllers\FollowerController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ComentarioController;
 
 Route::get('/', HomeController::class)->name('home');
 
+//Buscador
+Route::get('/buscador',[ BuscadorController::class,"index"])->name("buscador");
 Route::get('/register',[RegisterController::class,'index'])->name('register');
 Route::post('/register',[RegisterController::class,'store']);
 
@@ -26,6 +29,7 @@ Route::post('/logout',[LogoutController::class,'store'])->name('logout');
 // Perfil
 Route::get('{user:username}/edita-perfil',[PerfilController::class,'index'])->name('perfil.index');
 Route::post('{user:username}/edita-perfil',[PerfilController::class,'store'])->name('perfil.store');
+
 
 
 // Post
